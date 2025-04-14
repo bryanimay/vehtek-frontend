@@ -11,7 +11,7 @@ function App() {
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/diagnose`, {
         symptoms,
       });
-      setResult(response.data.result);
+      setResult(response.data.diagnosis); // <-- Fixed this line
     } catch (error) {
       console.error('Error diagnosing the symptoms', error);
     }
